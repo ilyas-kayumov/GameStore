@@ -1,0 +1,40 @@
+﻿@model IEnumerable<GameStore.Models.Game>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Store</title>
+</head>
+<body>
+    <h3>Games</h3>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Year</td>
+            <td>Platform</td>
+            <td>Genre</td>
+            <td>Developer</td>
+            <td>Publisher</td>
+            <td>Price</td>
+            <td></td>
+        </tr>
+        @foreach (var game in Model)
+            {
+            <tr>
+                <td>@game.Id</td>
+                <td>@game.Name</td>
+                <td>@game.Year</td>
+                <td>@game.Platform</td>
+                <td>@game.Genre</td>
+                <td>@game.Developer</td>
+                <td>@game.Publisher</td>
+                <td>@game.Price</td>
+                <td><a href="~/Home/Buy/@game.Id">Buy</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
