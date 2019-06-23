@@ -3,29 +3,23 @@
     ViewData["Title"] = "Checkout - Game Store";
 }
 <h3>Checkout</h3>
-<form method="post" class="form-horizontal" role="form">
+<form method="post" role="form">
     <input type="hidden" value="@ViewBag.GameId" name="GameId" />
     <p>Fill the form below to complete your purchase:</p>
-    <div class="form-group">
-        <label for="User" class="col-md-2 control-label">Name:</label>
-        <div class="col-md-4">
+    <div class="form">
+        <div class="form-group">
+            <label for="User" class="control-label">Name:</label>
             <input type="text" name="User" class="form-control" />
         </div>
-    </div>
-    <div class="form-group">
-        <label for="Address" class="col-md-2 control-label">Address:</label>
-        <div class="col-md-4">
+        <div class="form-group">
+            <label for="Address" class="control-label">Address:</label>
             <input type="text" name="Address" class="form-control" />
         </div>
-    </div>
-    <div class="form-group">
-        <label class="col-md-2 control-label">Contact phone:</label>
-        <div class="col-md-4">
+        <div class="form-group">
+            <label class="control-label">Contact phone:</label>
             <input type="text" name="ContactPhone" class="form-control" />
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
+        <div class="form-group">
             <input type="submit" class="btn btn-default" value="Send" />
         </div>
     </div>
