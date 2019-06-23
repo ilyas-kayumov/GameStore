@@ -26,12 +26,18 @@ namespace GameStore.Controllers
         }
 
         [HttpPost]
-        public string Buy(Order order)
+        public IActionResult Buy(Order order)
         {
             context.Orders.Add(order);
             context.SaveChanges();
 
-            return "Thank you, " + order.User + ", for purchase!";
+            return Redirect($"~/Home/Completed?user={order.User}");
+        }
+
+        public IActionResult Completed(string user)
+        {
+            ViewBag.User = user;
+            return View();
         }
     }
 }
