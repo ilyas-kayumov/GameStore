@@ -2,34 +2,31 @@
     Layout = "_Layout";
     ViewData["Title"] = "Checkout - Game Store";
 }
- 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Checkout - Game Store</title>
-</head>
-<body>
-    <div>
-        <h3>Checkout</h3>
-        <p>Fill the form below to complete your purchase:</p>
-        <form method="post">
-            <input type="hidden" value="@ViewBag.GameId" name="GameId" />
-            <table>
-                <tr>
-                    <td>Name:</td>
-                    <td><input type="text" name="User" /> </td>
-                </tr>
-                <tr>
-                    <td>Address:</td>
-                    <td><input type="text" name="Address" /></td>
-                </tr>
-                <tr>
-                    <td>Contact phone:</td>
-                    <td><input type="text" name="ContactPhone" /></td>
-                </tr>
-                <tr><td><input type="submit" value="Send" /> </td><td></td></tr>
-            </table>
-        </form>
+<h3>Checkout</h3>
+<form method="post" class="form-horizontal" role="form">
+    <input type="hidden" value="@ViewBag.GameId" name="GameId" />
+    <p>Fill the form below to complete your purchase:</p>
+    <div class="form-group">
+        <label for="User" class="col-md-2 control-label">Name:</label>
+        <div class="col-md-4">
+            <input type="text" name="User" class="form-control" />
+        </div>
     </div>
-</body>
-</html>
+    <div class="form-group">
+        <label for="Address" class="col-md-2 control-label">Address:</label>
+        <div class="col-md-4">
+            <input type="text" name="Address" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Contact phone:</label>
+        <div class="col-md-4">
+            <input type="text" name="ContactPhone" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Send" />
+        </div>
+    </div>
+</form>

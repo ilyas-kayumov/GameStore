@@ -3,39 +3,29 @@
     Layout = "_Layout";
     ViewData["Title"] = "Main - Game Store";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Main - Game Store</title>
-</head>
-<body>
-    <h3>Games</h3>
-    <table>
+<h3>Games</h3>
+<table class="table-condensed">
+    <tr>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Platform</th>
+        <th>Genre</th>
+        <th>Developer</th>
+        <th>Publisher</th>
+        <th>Price</th>
+        <th></th>
+    </tr>
+    @foreach (var game in Model)
+        {
         <tr>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Year</td>
-            <td>Platform</td>
-            <td>Genre</td>
-            <td>Developer</td>
-            <td>Publisher</td>
-            <td>Price</td>
-            <td></td>
+            <td>@game.Name</td>
+            <td>@game.Year</td>
+            <td>@game.Platform</td>
+            <td>@game.Genre</td>
+            <td>@game.Developer</td>
+            <td>@game.Publisher</td>
+            <td>@game.Price</td>
+            <td><a href="~/Home/Buy/@game.Id">Buy</a></td>
         </tr>
-        @foreach (var game in Model)
-            {
-            <tr>
-                <td>@game.Id</td>
-                <td>@game.Name</td>
-                <td>@game.Year</td>
-                <td>@game.Platform</td>
-                <td>@game.Genre</td>
-                <td>@game.Developer</td>
-                <td>@game.Publisher</td>
-                <td>@game.Price</td>
-                <td><a href="~/Home/Buy/@game.Id">Buy</a></td>
-            </tr>
-        }
-    </table>
-</body>
-</html>
+    }
+</table>
